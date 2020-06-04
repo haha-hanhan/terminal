@@ -65,8 +65,7 @@ static constexpr bool debugFeaturesDefault{ true };
 static constexpr bool debugFeaturesDefault{ false };
 #endif
 
-template<>
-struct JsonUtils::ConversionTrait<ElementTheme> : public JsonUtils::KeyValueMapper<ElementTheme, JsonUtils::ConversionTrait<ElementTheme>>
+JSON_ENUM_MAPPER(ElementTheme)
 {
     static constexpr std::array<pair_type, 3> mappings = {
         pair_type{ SystemThemeValue, ElementTheme::Default },
@@ -75,8 +74,7 @@ struct JsonUtils::ConversionTrait<ElementTheme> : public JsonUtils::KeyValueMapp
     };
 };
 
-template<>
-struct JsonUtils::ConversionTrait<LaunchMode> : public JsonUtils::KeyValueMapper<LaunchMode, JsonUtils::ConversionTrait<LaunchMode>>
+JSON_ENUM_MAPPER(LaunchMode)
 {
     static constexpr std::array<pair_type, 2> mappings = {
         pair_type{ DefaultLaunchModeValue, LaunchMode::DefaultMode },
@@ -85,8 +83,7 @@ struct JsonUtils::ConversionTrait<LaunchMode> : public JsonUtils::KeyValueMapper
     };
 };
 
-template<>
-struct JsonUtils::ConversionTrait<TabViewWidthMode> : public JsonUtils::KeyValueMapper<TabViewWidthMode, JsonUtils::ConversionTrait<TabViewWidthMode>>
+JSON_ENUM_MAPPER(TabViewWidthMode)
 {
     static constexpr std::array<pair_type, 2> mappings = {
         pair_type{ EqualTabWidthModeValue, TabViewWidthMode::Equal },

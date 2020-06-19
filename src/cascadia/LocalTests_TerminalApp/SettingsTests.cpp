@@ -1435,10 +1435,6 @@ namespace TerminalAppLocalTests
                 {
                     "name": "profile3",
                     "closeOnExit": null
-                },
-                {
-                    "name": "profile4",
-                    "closeOnExit": { "clearly": "not a string" }
                 }
             ]
         })" };
@@ -1453,7 +1449,6 @@ namespace TerminalAppLocalTests
 
         // Unknown modes parse as "Graceful"
         VERIFY_ARE_EQUAL(CloseOnExitMode::Graceful, settings._profiles[3].GetCloseOnExitMode());
-        VERIFY_ARE_EQUAL(CloseOnExitMode::Graceful, settings._profiles[4].GetCloseOnExitMode());
     }
     void SettingsTests::TestCloseOnExitCompatibilityShim()
     {
